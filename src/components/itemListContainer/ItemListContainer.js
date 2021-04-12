@@ -1,13 +1,13 @@
 import React from 'react';
 import './ItemListContainer.css';
-import WebInProgress from '../webInProgress/WebInProgress';
+import MessageCard from '../messageCard/MessageCard';
 
 
-export default function ItemListContainer(){
+export default function ItemListContainer(props){
 
     return (
         <div className="home_bg">
-        <WebInProgress />
+        <MessageCard title="Sitio en proceso" />
         </div>
       );
 }
