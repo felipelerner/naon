@@ -1,0 +1,11 @@
+
+
+.cart{
+    color: black;
+    cursor: pointer;
+}
+
+.cart:hover{
+    color: rgb(39, 105, 167);
+    cursor: pointer;
+}

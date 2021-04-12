@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavBar.css';
-import logo from '../img/logo_sisclo-02.png';
+import logo from '../../img/logo_sisclo-02-02.png';
+import CartWidget from '../cartWidget/CartWidget';
 
 
 export default function NavBar(){
@@ -14,6 +15,7 @@ export default function NavBar(){
                   <li>Pilusos</li>
                   <li>Medias</li>
               </ul>
+            <CartWidget />  
           </header>
         </div>
       );

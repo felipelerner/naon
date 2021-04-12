@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import NavBar from '../src/components/NavBar';
+import NavBar from '../src/components/navBar/NavBar';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
 
 export default class App extends React.Component {
 
@@ -9,7 +10,7 @@ export default class App extends React.Component {
     return(
       <div>
       <NavBar />
-      <h2>Sitio en proceso</h2>
+      <ItemListContainer />
       </div>
     )
   }
