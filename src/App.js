@@ -10,7 +10,7 @@ export default class App extends React.Component {
     return(
       <div>
       <NavBar />
-      <ItemListContainer greeting="Sitio en construcción" />
+      <ItemListContainer greeting="Sitio en construccion" />
       </div>
     )
   }
