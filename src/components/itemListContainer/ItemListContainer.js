@@ -7,7 +7,7 @@ export default function ItemListContainer(props){
 
     return (
         <div className="home_bg">
-        <MessageCard title="Sitio en proceso" />
+        <MessageCard title = {props.greeting} />
         </div>
       );
 }
