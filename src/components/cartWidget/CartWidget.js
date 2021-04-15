@@ -8,7 +8,7 @@ export default function CartWidget(){
     return(
     <div>
     
-        <ShoppingCartOutlinedIcon fontSize="Large" className="cart" />
+        <ShoppingCartOutlinedIcon fontSize="large" className="cart" />
     
     </div>
     )
