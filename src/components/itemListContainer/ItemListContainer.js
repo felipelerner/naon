@@ -7,12 +7,19 @@ export default function ItemListContainer(props){
 
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => response.json())
-    .then((data) => setPosts(data))
 
-  }, [])
+
+ 
+    useEffect(() => {
+      const timer = setTimeout(() => {
+      fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/components/data/prueba.json')
+      .then((response) => response.json())
+      .then((data) => setPosts(data))
+    }, 2000);
+  
+    }, [])
+  
+
 
     return (
         <div className="itemlistcontainer">

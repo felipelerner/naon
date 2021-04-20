@@ -7,11 +7,11 @@ export default function Item({post}) {
         
         <li className="itemCard">
             <div className ="detailImageContainer">
-                <img className="detailImage" src='http://www.hikaru.com.ar/images/menu-delivery/rolls-clas-california.jpg'></img>
+                <img className="detailImage" src={post.img}></img>
             </div>
             <div className ="textContainer">
                 <h2 className="detailTitle">{post.title}</h2>
-                <h4 className="detailDescription">lorem ipsum dolor quentu stolarz mathias lorem ipsum dolor quentu stolarz mathias  lorem ipsum dolor quentu stolarz mathias  </h4>
+                <h4 className="detailDescription">{post.body}</h4>
             </div>
         </li>
     )
