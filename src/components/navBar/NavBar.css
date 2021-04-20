@@ -9,6 +9,7 @@
     position: fixed;
     font-size: 1.2rem;
     color: rgb(31, 31, 31);
+    z-index: 2;
 }
 
 .Logo{
@@ -23,6 +24,7 @@
     width: 75%;
     padding: 0%;
     padding-right: 60px;
+    margin: 0;
 }
 
 .Nav-header ul li{

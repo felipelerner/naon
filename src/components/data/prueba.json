@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "title": "California",
+        "body": "Kanikama, palta y phila cubierto en sésamo rubio.",
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384122/big.jpg"
+    },
+    {
+        "id":2,
+        "title": "Buenos Aires",
+        "body": "Salmón, palta y phila cubierto en salmón bañado en sésamo rubio.",
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384130/big.jpg"
+    },
+    {
+        "id":3,
+        "title": "Spring",
+        "body": "Langostino, palta y phila cubierto en verdeo.",
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384131/big.jpg"
+    },
+    {
+        "id":4,
+        "title": "Tamago",
+        "body": "Salmón, palta y phila envuelto en tamago.",
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384132/big.jpg"
+    },
+    {
+        "id":5,
+        "title": "Sake",
+        "body": "Salmón cocido con miel cubierto con hilos de batata.",
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384134/big.jpg"
+    },
+    {
+        "id":5,
+        "title": "Smoked",
+        "body": "Salmón ahumado, palta y phila cubierto en sésamo mixto.",
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384135/big.jpg"
+    },
+    {
+        "id":6,
+        "title": "Golden",
+        "body": "Palta y phila cubierto en salmón.",
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384136/big.jpg"
+    }
+]
