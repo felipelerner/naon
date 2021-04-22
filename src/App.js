@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 import NavBar from '../src/components/navBar/NavBar';
-import ItemListContainer from './components/itemListContainer/ItemListContainer';
+import ItemListContainer from './containers/itemListContainer/ItemListContainer';
 import ItemCounterContainer from './components/itemCounter/ItemCounterContainer';
+
 
 export default class App extends React.Component {
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import './Item.css'
-import sushi from '../../img/sushi.jpg'
 
 export default function Item({post}) {
     return (
