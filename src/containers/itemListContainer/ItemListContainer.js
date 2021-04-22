@@ -12,7 +12,7 @@ export default function ItemListContainer(props){
  
     useEffect(() => {
       {/*const timer = setTimeout(() =>*/} {
-      fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/components/data/prueba.json')
+      fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
       .then((response) => response.json())
       .then((data) => setPosts(data))
     }{/*, 2000)*/};
