@@ -11,9 +11,9 @@ export default function NavBar(){
           <header className="Nav-header">
             <img className="Logo" src={logo}/>
               <ul>
-                  <li>Remeras</li>
-                  <li>Pilusos</li>
-                  <li>Medias</li>
+                  <li>Rolls</li>
+                  <li>Combos</li>
+                  <li>Contacto</li>
               </ul>
             <CartWidget />  
           </header>

@@ -16,7 +16,7 @@ export default function ItemDetail({post}) {
                         <h2 className="itemDetailTitle"> {post.title} </h2>
                         <h4 className="itemDetailDescription"> {post.body}</h4>
                         <div className="itemDetailPrice">
-                        <h4>1 roll (8 piezas) {post.price}</h4>
+                        <h4>1 roll (8 piezas) ${post.price}</h4>
                         </div>
                     </div>
                     <div className="itemDetailCounterContainer">
