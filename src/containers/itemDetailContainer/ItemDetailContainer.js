@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import ItemDetailList from '../../components/itemDetail/ItemDetailList';
+import ItemDetail from '../../components/itemDetail/ItemDetail';
+
 
 export default function ItemDetailContainer(props) {
 
@@ -9,7 +10,7 @@ export default function ItemDetailContainer(props) {
         {/*const timer = setTimeout(() =>*/} {
         fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
         .then((response) => response.json())
-        .then((data) => setPosts(data[0]))
+        .then((data) => setPosts(data[3]))
       }{/*, 2000)*/};
     
       }, [])
@@ -19,7 +20,7 @@ export default function ItemDetailContainer(props) {
 
     return (
         <div>
-            <ItemDetailList postInput={post}/>
+            <ItemDetail postInput={post}/>
         </div>
     )
 }
