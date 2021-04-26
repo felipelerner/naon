@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 import NavBar from '../src/components/navBar/NavBar';
 import ItemListContainer from './containers/itemListContainer/ItemListContainer';
@@ -21,13 +20,12 @@ export default class App extends React.Component {
             <Home/>
           </div> 
         </Route>
-        <Route path="/itemdetail">
+        <Route path="/itemdetail/:id">
         <ItemDetailContainer/>
         </Route>
-        <Route path="/itemlist">
+        <Route path="/itemlist/:category">
           <div className = "bodyApp">   
           {/*<ItemCounterContainer nombre ="remera" stock = {5} initial ={1}/>*/}
-          
           <ItemListContainer greeting="Sitio en construccion" />
           </div>
         </Route>

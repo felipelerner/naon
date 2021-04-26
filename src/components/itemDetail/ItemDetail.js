@@ -1,8 +1,10 @@
 import React from 'react'
+import { useParams } from 'react-router'
 import ItemCounter from '../itemCounter/ItemCounter'
 import './ItemDetail.css'
 
 export default function ItemDetail({postInput}) {
+
 
     return (
         <div className="itemDetailContainer">

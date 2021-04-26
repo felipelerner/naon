@@ -2,7 +2,14 @@
 
 *{
   font-family: Raleway;
+  text-decoration: none;
 }
+
+html::-webkit-scrollbar {
+
+  display: none;  /* Ocultar scroll */
+}
+
 
 .App {
   text-align: center;

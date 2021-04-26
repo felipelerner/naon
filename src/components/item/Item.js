@@ -1,9 +1,10 @@
 import React from 'react'
 import './Item.css'
+import { Link } from 'react-router-dom'
 
 export default function Item({post}) {
     return (
-        
+        <Link to ={`/itemdetail/${post.id}`}style={{ color: 'inherit', textDecoration: 'inherit'}}>
         <li className="itemCard">
             <div className ="detailImageContainer">
                 <img className="detailImage" src={post.img}></img>
@@ -13,5 +14,6 @@ export default function Item({post}) {
                 <h4 className="detailDescription">{post.body}</h4>
             </div>
         </li>
+         </Link>
     )
 }
