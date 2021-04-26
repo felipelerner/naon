@@ -1,0 +1,30 @@
+.homeBigCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: solid 10px white;
+
+    height: 70%;
+    width: 90%;
+    border-radius: 20px;
+    transform: translateY(10%);
+}
+
+.homeSmallCard{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: white;
+
+    border-radius: 20px;
+}
+
+
+.homeSmallCard h1{
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

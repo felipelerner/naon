@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import ItemDetail from '../../components/itemDetail/ItemDetail';
 
 
+
 export default function ItemDetailContainer(props) {
 
     const [post, setPosts] = useState([]);

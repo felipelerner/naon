@@ -12,7 +12,7 @@ export default function NavBar(){
             <img className="Logo" src={logo}/>
               <ul>
                   <li>Rolls</li>
-                  <li>Combos</li>
+                  <li>Tablas</li>
                   <li>Contacto</li>
               </ul>
             <CartWidget />  

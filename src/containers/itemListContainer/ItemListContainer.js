@@ -6,6 +6,7 @@ import ItemList from '../../components/itemList/ItemList';
 export default function ItemListContainer(props){
 
   const [posts, setPosts] = useState([]);
+  let filteredPost =posts.filter(post => post.category == 'roll');
 
 
 
@@ -23,7 +24,7 @@ export default function ItemListContainer(props){
 
     return (
         <div className="itemlistcontainer">
-        <ItemList postsInput={posts} />
+        <ItemList postsInput={filteredPost} />
         {/*<MessageCard title = {props.greeting} />*/}
         </div>
       );
