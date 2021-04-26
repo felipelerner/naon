@@ -4,48 +4,55 @@
         "title": "California",
         "body": "Kanikama, palta y phila cubierto en sésamo rubio.",
         "price":"600",
-        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384122/big.jpg"
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384122/big.jpg",
+        "category": "roll"
     },
     {
         "id":2,
         "title": "Buenos Aires",
         "body": "Salmón, palta y phila cubierto en salmón bañado en sésamo rubio.",
         "price":"660",
-        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384130/big.jpg"
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384130/big.jpg",
+        "category": "roll"
     },
     {
         "id":3,
         "title": "Spring",
         "body": "Langostino, palta y phila cubierto en verdeo.",
         "price":"540",
-        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384131/big.jpg"
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384131/big.jpg",
+        "category": "roll"
     },
     {
         "id":4,
         "title": "Tamago",
         "body": "Salmón, palta y phila envuelto en tamago.",
         "price":"590",
-        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384132/big.jpg"
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384132/big.jpg",
+        "category": "roll"
     },
     {
         "id":5,
         "title": "Sake",
         "body": "Salmón cocido con miel cubierto con hilos de batata.",
         "price":"620",
-        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384134/big.jpg"
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384134/big.jpg",
+        "categorie": "roll"
     },
     {
         "id":6,
         "title": "Smoked",
         "body": "Salmón ahumado, palta y phila cubierto en sésamo mixto.",
         "price":"680",
-        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384135/big.jpg"
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384135/big.jpg",
+        "category": "special"
     },
     {
         "id":7,
         "title": "Golden",
         "body": "Palta y phila cubierto en salmón.",
         "price":"700",
-        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384136/big.jpg"
+        "img": "https://pedidos.masdelivery.com/panel/images/dishes/1253/384136/big.jpg",
+        "category": "roll"
     }
 ]
