@@ -11,7 +11,7 @@ export default function NavBar(){
         <div className="Nav">
           <header className="Nav-header">
             <Link to={`/`}style={{ color: 'inherit', textDecoration: 'inherit'}}>
-            <img className="Logo" src={logo}/>
+            <img className="Logo" src={logo} alt="logo sisclo"/>
             </Link>
               <ul>
                 <Link to ={`/itemlist/roll`}style={{ color: 'inherit', textDecoration: 'inherit'}}>

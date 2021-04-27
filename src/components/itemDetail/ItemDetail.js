@@ -1,5 +1,4 @@
 import React from 'react'
-import { useParams } from 'react-router'
 import ItemCounter from '../itemCounter/ItemCounter'
 import './ItemDetail.css'
 
@@ -10,7 +9,7 @@ export default function ItemDetail({postInput}) {
         <div className="itemDetailContainer">
             <div className="itemDetail">
                 <div className ="itemDetailImageContainer">
-                    <img className="itemDetailImage" src={postInput.img}></img>
+                    <img className="itemDetailImage" src={postInput.img} alt={`producto ${postInput.title}`} ></img>
                 </div>
                 <div className="texCounterContainer">
                     <div className ="textDetailContainer">

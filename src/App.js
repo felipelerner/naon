@@ -11,10 +11,10 @@ export default class App extends React.Component {
 
   render(){
     return(
+      <div className="home_bg">
       <Router>
+      <NavBar />   
         <Switch>
-        <div className="home_bg">
-          <NavBar />   
         <Route exact path="/" >
           <div className="home">
             <Home/>
@@ -29,9 +29,9 @@ export default class App extends React.Component {
           <ItemListContainer greeting="Sitio en construccion" />
           </div>
         </Route>
-        </div>
         </Switch>
       </Router>
+      </div>
     )
   }
 }

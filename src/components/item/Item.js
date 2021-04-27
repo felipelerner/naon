@@ -7,7 +7,7 @@ export default function Item({post}) {
         <Link to ={`/itemdetail/${post.id}`}style={{ color: 'inherit', textDecoration: 'inherit'}}>
         <li className="itemCard">
             <div className ="detailImageContainer">
-                <img className="detailImage" src={post.img}></img>
+                <img className="detailImage" src={post.img} alt={`producto ${post.title}`}></img>
             </div>
             <div className ="textContainer">
                 <h2 className="detailTitle">{post.title}</h2>

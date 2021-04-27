@@ -12,20 +12,19 @@ export default function ItemDetailContainer() {
 
     const [post, setPosts] = useState([]);
 
+    
     const isItemId = (post) => {
-        return post.id == id;
-      };
+      return post.id == id;
+    };
+
 
     useEffect(() => {
-        {fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
+
+        fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
         .then((response) => response.json())
         .then((data) => setPosts(data.find(isItemId)));
-      };
-    
+
       }, [])
-
-
-
 
     return (
         <div>
