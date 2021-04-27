@@ -9,22 +9,23 @@ export default function ItemDetailContainer() {
    
     const {id} = useParams()
     console.log(id)
+    
 
     const [post, setPosts] = useState([]);
 
-    
-    const isItemId = (post) => {
-      return post.id == id;
-    };
-
+  
 
     useEffect(() => {
+
+      const isItemId = (post) => {
+        return parseInt(post.id) == id;
+      };
 
         fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
         .then((response) => response.json())
         .then((data) => setPosts(data.find(isItemId)));
 
-      }, [])
+      }, [id])
 
     return (
         <div>

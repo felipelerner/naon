@@ -4,6 +4,8 @@ import './ItemDetail.css'
 
 export default function ItemDetail({postInput}) {
 
+    const category = postInput.category
+
 
     return (
         <div className="itemDetailContainer">
@@ -16,7 +18,11 @@ export default function ItemDetail({postInput}) {
                         <h2 className="itemDetailTitle"> {postInput.title} </h2>
                         <h4 className="itemDetailDescription"> {postInput.body}</h4>
                         <div className="itemDetailPrice">
-                        <h4>1 roll (8 piezas) ${postInput.price}</h4>
+                            {
+                                category === "roll" ? <h4>1 roll (8 piezas) ${postInput.price}</h4> :
+                                                    <h4>1 tabla ${postInput.price}</h4>
+                            }
+                        
                         </div>
                     </div>
                     <div className="itemDetailCounterContainer">

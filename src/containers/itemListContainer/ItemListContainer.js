@@ -10,11 +10,13 @@ export default function ItemListContainer(props){
 
   const [posts, setPosts] = useState([]);
   
-  const filterCategory = (posts) => {
-    return posts.category == category;
-  };
+
 
     useEffect(() => {
+
+      const filterCategory = (posts) => {
+        return posts.category === category;
+      };
 
       fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
       .then((response) => response.json())
