@@ -10,6 +10,7 @@ export default function ItemDetailContainer() {
     const {id} = useParams()
     console.log(id)
     
+    
 
     const [post, setPosts] = useState([]);
 
@@ -18,7 +19,11 @@ export default function ItemDetailContainer() {
     useEffect(() => {
 
       const isItemId = (post) => {
-        return parseInt(post.id) == id;
+
+        const parsedId = parseInt(id)
+        
+        return post.id === parsedId;
+
       };
 
         fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
