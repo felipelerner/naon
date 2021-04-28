@@ -5,6 +5,7 @@ import './ItemDetail.css'
 export default function ItemDetail({postInput}) {
 
     const category = postInput.category
+    const stock = postInput.stock
 
 
     return (
@@ -26,7 +27,7 @@ export default function ItemDetail({postInput}) {
                         </div>
                     </div>
                     <div className="itemDetailCounterContainer">
-                        <ItemCounter nombre={"roll"} stock={"10"} initial={1} />
+                        <ItemCounter nombre={category} stock={stock} initial={1} />
                     </div>
                 </div>
             </div>
