@@ -8,14 +8,10 @@
     width: 100%;
 }
 
-.visualizerContainer{
-    padding-bottom: 30px;
-}
-
 button{
     display: flex;
     flex-direction: row;
-    margin-top: -50px;
+    margin-top: -20px;
     /* margin-bottom: 30px; */
 }
 
@@ -24,7 +20,3 @@ p{
     font-family: Raleway;
 }
 
-.prueba{
-    margin-top: -50px;
-    margin-bottom: -20px;
-}

@@ -23,6 +23,7 @@ export default function ItemDetail({postInput}) {
                                 category === "roll" ? <h4>1 roll (8 piezas) ${postInput.price}</h4> :
                                                     <h4>1 tabla ${postInput.price}</h4>
                             }
+                        
                         </div>
                     </div>
                     <div className="itemDetailCounterContainer">
