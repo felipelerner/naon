@@ -50,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .itemDetailTitle{
@@ -84,6 +84,6 @@
 }
 
 .itemDetailCounterContainer{
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 65px;
 }

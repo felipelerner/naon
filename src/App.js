@@ -5,12 +5,14 @@ import ItemListContainer from './containers/itemListContainer/ItemListContainer'
 import ItemDetailContainer from './containers/itemDetailContainer/ItemDetailContainer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/home/Home';
+import { CartContext } from './context/CartContext';
 
 
 export default class App extends React.Component {
 
   render(){
     return(
+      <CartContext.Provider value={[]} >
       <div className="home_bg">
       <Router>
       <NavBar />   
@@ -32,6 +34,7 @@ export default class App extends React.Component {
         </Switch>
       </Router>
       </div>
+      </CartContext.Provider>
     )
   }
 }

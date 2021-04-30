@@ -1,19 +1,30 @@
 .containerView{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     z-index: 1;
     height: 100%;
     width: 100%;
 }
 
+.visualizerContainer{
+    padding-bottom: 30px;
+}
+
 button{
     display: flex;
     flex-direction: row;
+    margin-top: -50px;
+    /* margin-bottom: 30px; */
 }
 
 p{
     font-size: 1rem;
     font-family: Raleway;
+}
+
+.prueba{
+    margin-top: -50px;
+    margin-bottom: -20px;
 }
