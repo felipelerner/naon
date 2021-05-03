@@ -10,7 +10,7 @@ export default function ItemCounter ({title, nombre, stock, initial, id}){
 
   let history = useHistory();
 
-  const cart = useContext(CartContext)  
+  const {cart, setCartItem} = useContext(CartContext)  
   const [number, setNumber] = useState(initial);
   const [showFinishButton, setShowFinishButton] = useState(false);
 
@@ -24,7 +24,7 @@ export default function ItemCounter ({title, nombre, stock, initial, id}){
   }
 
   function onAdd(){
-    cart.setCartItem({id: id, quantity: number, title: title})
+    setCartItem({id: id, quantity: number, title: title})
     setShowFinishButton(true)
   }
 

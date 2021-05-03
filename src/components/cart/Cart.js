@@ -4,22 +4,34 @@ import { CartContext } from '../../context/CartContext';
 
 export default function CartPage() {
 
-    const cart = useContext(CartContext)
+    const {cart} = useContext(CartContext)
+    
+
     function showcart(){
         console.log(cart)
     }
 
+    function clear(){
+    console.log('borrando cart')
+
+    }
+
+
     return (
         <div className="home">
       <ul>
-        {cart.cart.map(item => {
+        {cart.map(item => {
           return <li key={item.id}>
-            <span> producto: {item.title}</span>
-            <span> total: {item.quantity}</span>
+            <p> producto: {item.title} total: {item.quantity}</p> 
+            <button className="btn btn-danger">-</button>
+            <br/>
           </li>
+          
         })}
         <br/>
-        <button onClick={showcart} className="btn btn-primary">Comprar</button>
+        <button onClick={showcart} className="btn btn-success">Comprar</button>
+        <br/><br/>
+        <button  onClick={clear} className="btn btn-danger">Eliminar todos los productos</button>
       </ul>
       </div>
     )

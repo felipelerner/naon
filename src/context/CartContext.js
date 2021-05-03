@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { createContext } from 'react';
 
 
@@ -23,28 +23,16 @@ export function CartProvider(props){
                 quantity: quantity + item.quantity
               }
             }
+            return item
           })
           return setCart([...newToCart])
         }
         setCart([...cart, {id, title, quantity}])
     }
 
-    const value = useMemo(()=>{
-        return({
-            setCartItem,
-            cart
-        })
-    },[setCartItem, cart])
-
-    return <CartContext.Provider value={value}{...props} /> 
+    return <CartContext.Provider value={{setCartItem, cart}}{...props} /> 
     
 }
 
-export function useCart(){
-    const context = React.useContext(CartContext);
-    if(!context){
-        throw new Error ('useCart debe estar dentro del provider')
-    }
 
-    return context;
-}
+
