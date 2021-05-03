@@ -13,7 +13,10 @@ export default function CartPage() {
 
     function clear(){
     console.log('borrando cart')
+    }
 
+    function removeItem(){
+    console.log(`eliminar item`)
     }
 
 
@@ -23,7 +26,7 @@ export default function CartPage() {
         {cart.map(item => {
           return <li key={item.id}>
             <p> producto: {item.title} total: {item.quantity}</p> 
-            <button className="btn btn-danger">-</button>
+            <button onClick={removeItem} className="btn btn-danger">-</button>
             <br/>
           </li>
           
