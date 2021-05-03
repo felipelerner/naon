@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ItemCounterVisualizer from './ItemCounterVisualizer';
 import 'bootstrap/dist/css/bootstrap.css';
 import './ItemCounter.css';
+import { useHistory } from "react-router-dom";
+import { CartContext } from '../../context/CartContext';
 
-export default function ItemCounter ({nombre, stock, initial}){
 
+export default function ItemCounter ({title, nombre, stock, initial, id}){
+
+  let history = useHistory();
+
+  const cart = useContext(CartContext)  
   const [number, setNumber] = useState(initial);
+  const [showFinishButton, setShowFinishButton] = useState(false);
+
 
   function onIncrement(){
     setNumber(number + 1);
@@ -13,6 +21,16 @@ export default function ItemCounter ({nombre, stock, initial}){
 
   function onDecrement(){
     setNumber(number - 1);
+  }
+
+  function onAdd(){
+    cart.setCartItem({id: id, quantity: number, title: title})
+    setShowFinishButton(true)
+  }
+
+  function toCart(){
+    history.push("/cart");
+    console.log(cart)
   }
 
     return(
@@ -31,7 +49,9 @@ export default function ItemCounter ({nombre, stock, initial}){
       </div>
       <div>
         <br />
-        <button className="btn btn-outline-primary">Agregar al carrito</button>  
+        <button onClick={onAdd} className="btn btn-outline-primary">Agregar al carrito</button>  
+        <br /><br />
+        { showFinishButton ? <button onClick={toCart} className="btn btn-outline-primary">Finalizar compra</button> : null}
       </div>
       </div>
     )

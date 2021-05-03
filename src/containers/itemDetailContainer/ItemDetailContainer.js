@@ -10,9 +10,9 @@ export default function ItemDetailContainer() {
     const {id} = useParams()
     console.log(id)
     
-    
-
     const [post, setPosts] = useState([]);
+
+    
 
   
 

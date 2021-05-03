@@ -6,7 +6,9 @@ export default function ItemDetail({postInput}) {
 
     const category = postInput.category
     const stock = postInput.stock
-
+    const id = postInput.id
+    const title = postInput.title
+    
 
     return (
         <div className="itemDetailContainer">
@@ -27,7 +29,7 @@ export default function ItemDetail({postInput}) {
                         </div>
                     </div>
                     <div className="itemDetailCounterContainer">
-                        <ItemCounter nombre={category} stock={stock} initial={1} />
+                        <ItemCounter title={title} id={id} nombre={category} stock={stock} initial={1} />
                     </div>
                 </div>
             </div>

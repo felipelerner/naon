@@ -5,39 +5,43 @@ import ItemListContainer from './containers/itemListContainer/ItemListContainer'
 import ItemDetailContainer from './containers/itemDetailContainer/ItemDetailContainer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/home/Home';
-import { CartContext } from './context/CartContext';
+import { CartProvider } from './context/CartContext';
+import CartPage from './components/cart/Cart';
 
 
-export default class App extends React.Component {
+export default function App(){
 
-  render(){
-    return(
-      <CartContext.Provider value={[]} >
-      <div className="home_bg">
-      <Router>
-      <NavBar />   
-        <Switch>
-        <Route exact path="/" >
-          <div className="home">
-            <Home/>
-          </div> 
-        </Route>
-        <Route path="/itemdetail/:id">
-        <ItemDetailContainer/>
-        </Route>
-        <Route path="/itemlist/:category">
-          <div className = "bodyApp">   
-          {/*<ItemCounterContainer nombre ="remera" stock = {5} initial ={1}/>*/}
-          <ItemListContainer greeting="Sitio en construccion" />
-          </div>
-        </Route>
-        </Switch>
-      </Router>
-      </div>
-      </CartContext.Provider>
-    )
-  }
+  return(
+    <CartProvider>
+    <div className="home_bg">
+    <Router>
+    <NavBar />   
+      <Switch>
+      <Route exact path="/" >
+        <div className="home">
+          <Home/>
+        </div> 
+      </Route>
+          <Route path="/itemdetail/:id">
+          <ItemDetailContainer/>
+          </Route>
+          <Route path="/itemlist/:category">
+            <div className = "bodyApp">   
+            {/*<ItemCounterContainer nombre ="remera" stock = {5} initial ={1}/>*/}
+            <ItemListContainer greeting="Sitio en construccion" />
+            </div>
+          </Route>
+          <Route path="/cart">
+            <CartPage />
+          </Route>
+      </Switch>
+    </Router>
+    </div>
+    </CartProvider>
+  )
+
 }
+
 
 
 
