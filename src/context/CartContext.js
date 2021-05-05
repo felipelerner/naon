@@ -12,6 +12,7 @@ export function CartProvider(props){
     function isCurrentlyInCart (id) {
         return cart.some(item => item.id === id)
       }
+
     
       function setCartItem({id, title, quantity}) {
         const isInCart = isCurrentlyInCart(id)
@@ -30,7 +31,19 @@ export function CartProvider(props){
         setCart([...cart, {id, title, quantity}])
     }
 
-    return <CartContext.Provider value={{setCartItem, cart}}{...props} /> 
+    function clear(){
+      console.log('borrando cart')
+      setCart([])
+    }
+
+    
+    function removeItem(id) {
+      const newToCart = cart.filter((item) => item.id !== id);
+      setCart(newToCart);
+      console.log(`eliminar item id ${id}`)
+  }
+
+    return <CartContext.Provider value={{setCartItem, setCart, clear, removeItem, cart}}{...props} /> 
     
 }
 
