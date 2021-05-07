@@ -14,21 +14,22 @@ export function CartProvider(props){
       }
 
     
-      function setCartItem({id, title, quantity}) {
+      function setCartItem({id, title, quantity, price}) {
         const isInCart = isCurrentlyInCart(id)
         if (isInCart) {
           const newToCart = cart.map(item => {
             if (item.id === id) {
               return {
                 ...item,
-                quantity: quantity + item.quantity
+                quantity: quantity + item.quantity,
+                price: price
               }
             }
             return item
           })
           return setCart([...newToCart])
         }
-        setCart([...cart, {id, title, quantity}])
+        setCart([...cart, {id, title, quantity, price}])
     }
 
     function clear(){

@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { CartContext } from '../../context/CartContext';
 
 
-export default function ItemCounter ({title, nombre, stock, initial, id}){
+export default function ItemCounter ({title, nombre, stock, initial, id, price}){
 
   let history = useHistory();
 
@@ -24,7 +24,7 @@ export default function ItemCounter ({title, nombre, stock, initial, id}){
   }
 
   function onAdd(){
-    setCartItem({id: id, quantity: number, title: title})
+    setCartItem({id: id, quantity: number, title: title, price: price})
     setShowFinishButton(true)
   }
 
