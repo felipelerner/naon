@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { CartContext } from '../../context/CartContext';
 
 
@@ -10,20 +10,30 @@ export default function CartPage() {
       console.log(cart)
     }
 
+    // const preciofinal = [sumarPrecios]
+
+    
+
     
     return (
         <div className="home">
         <ul>
           {cart.map(item => {
+
+            const precioPorProducto = (item.price * item.quantity)
+            
+            
+
             return <li key={item.id}>
-              <p> producto: {item.title} unidades: {item.quantity} subtotal: ${item.quantity > 1 ?  item.price * item.quantity : item.price}</p> 
+              <p> producto: {item.title} unidades: {item.quantity} subtotal: ${item.quantity > 1 ?  precioPorProducto : item.price}</p> 
               <button onClick={() =>removeItem(item.id)} className="btn btn-danger">-</button>
               <br/>
             </li>
             
           })}
         <br/>
-        <p>Precio total:{1} </p>
+        {/* <totalPrice/> */}
+        <p>Precio total:{0} </p>
         <button onClick={showcart} className="btn btn-success">Comprar</button>
         <br/><br/>
         <button  onClick={clear} className="btn btn-danger">Eliminar todos los productos</button>
