@@ -55,4 +55,5 @@ export default function ItemCounter ({title, nombre, stock, initial, id, price})
       </div>
       </div>
     )
+
 }

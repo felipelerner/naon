@@ -15,10 +15,11 @@ export default function CartWidget(){
 
     return(
     <div>
-        {/* {itemsInCart > 0 ? <div className="popCart"> {totalItems} </div> : null} */}
-        <div className="popCart"> {totalItems} </div>
-        <ShoppingCartOutlinedIcon fontSize="large" className="cart" />
-    
+        {itemsInCart > 0 ? <div>
+            <div className="popCart"> {totalItems} </div>
+            <ShoppingCartOutlinedIcon fontSize="large" className="cartWithPop" />
+        </div> : <ShoppingCartOutlinedIcon fontSize="large" className="cart" />} 
+
     </div>
     )
     

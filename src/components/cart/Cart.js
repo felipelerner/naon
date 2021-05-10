@@ -7,6 +7,7 @@ export default function CartPage() {
 
     const {cart, clear, removeItem} = useContext(CartContext)
 
+
     function showcart(){
       console.log(cart)
     }
@@ -18,25 +19,45 @@ export default function CartPage() {
     
     const sumaPrecios = precio.reduce((prev, next) => prev + next, 0);
   
+    function CartWithItems({id, product, quantity, priceByProduct, price}){
+      return (
+        <li key={id}>
+        <p> producto: {product} unidades: {quantity} subtotal: ${quantity > 1 ?  priceByProduct : price}</p> 
+        <button>+</button>
+        <br/>
+        <button onClick={() =>removeItem(id)} className="btn btn-danger">Remover Item</button>
+        <br/>
+      </li>
+      )
+    }
+    
+    function CartWithoutItems(){
+      return (
+        <p>No elegiste ningun item</p>
+      )
+    }
+
+    function ItemIn({id, product, quantity, priceByProduct, price}){
+      if(id){
+        return <CartWithItems id={id} product={product} quantity={quantity} priceByProduct={priceByProduct} price={price} />;
+      }
+      return <CartWithoutItems/>;
+    }
       
 
     
     return (
         <div className="home">
         <ul>
-
-          {cart.map(item => {
+          {cart.map(item =>{ 
             const precioPorProducto = (item.price * item.quantity)
             console.log (precioPorProducto)
-            return (
-              <li key={item.id}>
-              <p> producto: {item.title} unidades: {item.quantity} subtotal: ${item.quantity > 1 ?  precioPorProducto : item.price}</p> 
-              <button onClick={() =>removeItem(item.id)} className="btn btn-danger">-</button>
-              <br/>
-            </li>
-            )
-
-          })}
+          return(
+              <div>
+                <ItemIn id={item.id} product={item.title} quantity={item.quantity} priceByProduct={precioPorProducto} price={item.price}/>
+            </div>
+          )})}
+        
 
         <br/>
         <p>Precio total:{sumaPrecios} </p>
