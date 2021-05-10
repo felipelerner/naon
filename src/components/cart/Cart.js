@@ -1,18 +1,25 @@
-import React, {useContext} from 'react'
+import React, {useContext} from 'react';
 import { CartContext } from '../../context/CartContext';
+import { useHistory } from 'react-router-dom'
+
 
 
 
 export default function CartPage() {
+  
+    let history = useHistory()
 
-    const {cart, clear, removeItem} = useContext(CartContext)
+    function handleClick(){
+      history.push('/')
+    }
+
+    const {cart, clear, removeItem, sumaCantidad} = useContext(CartContext)
 
 
     function showcart(){
       console.log(cart)
+      console.log(sumaCantidad)
     }
-
-       
 
     const precio = cart.map(item =>
      (item.price * item.quantity))   
@@ -22,9 +29,7 @@ export default function CartPage() {
     function CartWithItems({id, product, quantity, priceByProduct, price}){
       return (
         <li key={id}>
-        <p> producto: {product} unidades: {quantity} subtotal: ${quantity > 1 ?  priceByProduct : price}</p> 
-        <button>+</button>
-        <br/>
+        <p> producto: {product} unidades: {quantity} subtotal: ${quantity > 1 ?  priceByProduct : price}</p>
         <button onClick={() =>removeItem(id)} className="btn btn-danger">Remover Item</button>
         <br/>
       </li>
@@ -33,32 +38,23 @@ export default function CartPage() {
     
     function CartWithoutItems(){
       return (
-        <p>No elegiste ningun item</p>
+        <div>
+        <p>No elegiste ningun item</p><button onClick={() => handleClick()} className="btn btn-light">Volver al home</button>
+        </div>
       )
     }
-
-    function ItemIn({id, product, quantity, priceByProduct, price}){
-      if(id){
-        return <CartWithItems id={id} product={product} quantity={quantity} priceByProduct={priceByProduct} price={price} />;
-      }
-      return <CartWithoutItems/>;
-    }
-      
 
     
     return (
         <div className="home">
         <ul>
-          {cart.map(item =>{ 
-            const precioPorProducto = (item.price * item.quantity)
-            console.log (precioPorProducto)
-          return(
-              <div>
-                <ItemIn id={item.id} product={item.title} quantity={item.quantity} priceByProduct={precioPorProducto} price={item.price}/>
-            </div>
-          )})}
-        
-
+          {!cart.length ? <CartWithoutItems/> : 
+                cart.map(item =>{ 
+                  const precioPorProducto = (item.price * item.quantity)
+                  console.log (precioPorProducto)
+                return(
+                <CartWithItems id={item.id} product={item.title} quantity={item.quantity} priceByProduct={precioPorProducto} price={item.price}/>
+                )})}
         <br/>
         <p>Precio total:{sumaPrecios} </p>
         <button onClick={showcart} className="btn btn-success">Comprar</button>

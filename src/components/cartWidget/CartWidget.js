@@ -2,24 +2,26 @@ import React, { useContext } from 'react';
 import './CartWidget.css';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { CartContext } from '../../context/CartContext';
+import { useHistory } from 'react-router-dom'
 
 
 export default function CartWidget(){
 
-    const {cart} = useContext(CartContext)
+    const {sumaCantidad} = useContext(CartContext)
 
-    const itemsInCart = cart.map(item => 
-        (item.quantity))
+    let history = useHistory()
 
-    const totalItems = (itemsInCart)
+    function handleClick() {
+      history.push("/cart");
+    }
+
 
     return(
     <div>
-        {itemsInCart > 0 ? <div>
-            <div className="popCart"> {totalItems} </div>
-            <ShoppingCartOutlinedIcon fontSize="large" className="cartWithPop" />
-        </div> : <ShoppingCartOutlinedIcon fontSize="large" className="cart" />} 
-
+        {sumaCantidad > 0 ? <div>
+            <div className="popCart"> {sumaCantidad} </div>
+            <ShoppingCartOutlinedIcon   onClick={handleClick}  fontSize="large" className="cartWithPop" />
+        </div> : <ShoppingCartOutlinedIcon  onClick={handleClick}  fontSize="large" className="cart" />} 
     </div>
     )
     

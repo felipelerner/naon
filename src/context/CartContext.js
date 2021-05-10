@@ -14,13 +14,14 @@ export function CartProvider(props){
       }
 
     
-      function setCartItem({id, title, quantity, price, totalPrice, totalProducts}) {
+      function setCartItem({id, title, quantity, price, totalPrice, totalProducts, stock}) {
         const isInCart = isCurrentlyInCart(id)
         if (isInCart) {
           const newToCart = cart.map(item => {
             if (item.id === id) {
               return {
                 ...item,
+                stock: stock,
                 quantity: quantity + item.quantity,
                 price: price,
                 totalPrice: (item.price * item.quantity),
@@ -31,7 +32,7 @@ export function CartProvider(props){
           })
           return setCart([...newToCart])
         }
-        setCart([...cart, {id, title, quantity, price, totalPrice, totalProducts}])
+        setCart([...cart, {id, title, quantity, price, totalPrice, totalProducts, stock}])
     }
 
     function clear(){
@@ -46,20 +47,13 @@ export function CartProvider(props){
       console.log(`eliminar item id ${id}`)
     }
 
-    // function calculadora() {
+    const cantidad = cart.map(item =>
+      item.quantity)
 
-    //   const precio = cart.map(item =>
-    //     (item.price * item.quantity))   
-       
-    //   const sumaPrecios = precio.reduce((prev, next) => prev + next, 0);
-
-    //   return sumaPrecios
-    
-    // }
+    const sumaCantidad = cantidad.reduce((prev, next)=> prev + next, 0);
 
 
-
-    return <CartContext.Provider value={{setCartItem, setCart, clear, removeItem, cart}}{...props} /> 
+    return <CartContext.Provider value={{sumaCantidad, setCartItem, setCart, clear, removeItem, cart}}{...props} /> 
     
 }
 

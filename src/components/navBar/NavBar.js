@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'
 
 export default function NavBar(){
 
+
+
     return (
         <div className="Nav">
           <header className="Nav-header">
@@ -22,7 +24,7 @@ export default function NavBar(){
                 </Link>  
                   <li>Contacto</li>
               </ul>
-            <CartWidget />  
+            <CartWidget/>  
           </header>
         </div>
       );
