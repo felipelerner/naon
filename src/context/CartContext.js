@@ -14,7 +14,7 @@ export function CartProvider(props){
       }
 
     
-      function setCartItem({id, title, quantity, price}) {
+      function setCartItem({id, title, quantity, price, totalPrice, totalProducts}) {
         const isInCart = isCurrentlyInCart(id)
         if (isInCart) {
           const newToCart = cart.map(item => {
@@ -22,14 +22,16 @@ export function CartProvider(props){
               return {
                 ...item,
                 quantity: quantity + item.quantity,
-                price: price
+                price: price,
+                totalPrice: (item.price * item.quantity),
+                totalProducts: (item.quantity + item.quantity) 
               }
             }
             return item
           })
           return setCart([...newToCart])
         }
-        setCart([...cart, {id, title, quantity, price}])
+        setCart([...cart, {id, title, quantity, price, totalPrice, totalProducts}])
     }
 
     function clear(){
@@ -42,7 +44,20 @@ export function CartProvider(props){
       const newToCart = cart.filter((item) => item.id !== id);
       setCart(newToCart);
       console.log(`eliminar item id ${id}`)
-  }
+    }
+
+    // function calculadora() {
+
+    //   const precio = cart.map(item =>
+    //     (item.price * item.quantity))   
+       
+    //   const sumaPrecios = precio.reduce((prev, next) => prev + next, 0);
+
+    //   return sumaPrecios
+    
+    // }
+
+
 
     return <CartContext.Provider value={{setCartItem, setCart, clear, removeItem, cart}}{...props} /> 
     
