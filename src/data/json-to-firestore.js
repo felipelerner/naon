@@ -1,10 +1,10 @@
-const firebase = require("firebase");
+
 // Required for side-effects
-require("firebase/firestore");
+import "firebase/firestore";
 
 
 // Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
+initializeApp({
     apiKey: "AIzaSyDjxdFuJ3XF13mrGzAyKPLfkiZ-xIZXoKc",
     authDomain: "sushi-ecommerce-973c1.firebaseapp.com",
     projectId: "sushi-ecommerce-973c1",
@@ -14,7 +14,7 @@ firebase.initializeApp({
     measurementId: "G-KCE1V582B0"
   });
   
-var db = firebase.firestore();
+var db = firestore();
 
 var data = [
     {
