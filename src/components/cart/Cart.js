@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { CartContext } from '../../context/CartContext';
 import { useHistory } from 'react-router-dom'
+import './Cart.css'
 
 
 
@@ -28,11 +29,15 @@ export default function CartPage() {
   
     function CartWithItems({id, product, quantity, priceByProduct, price}){
       return (
-        <li key={id}>
-        <p> producto: {product} unidades: {quantity} subtotal: ${quantity > 1 ?  priceByProduct : price}</p>
-        <button onClick={() =>removeItem(id)} className="btn btn-danger">Remover Item</button>
-        <br/>
-      </li>
+        <div className="itemSelected">
+          <li>
+            <button onClick={() =>removeItem(id)} className="btn btn-danger">-</button>
+            <h1> {product} </h1>
+            <p className="itemQuantity"> X{quantity} </p>
+            <p> ${quantity > 1 ?  priceByProduct : price}</p>
+            <br/>
+          </li>
+        </div>
       )
     }
     
@@ -47,20 +52,25 @@ export default function CartPage() {
     
     return (
         <div className="home">
-        <ul>
-          {!cart.length ? <CartWithoutItems/> : 
-                cart.map(item =>{ 
-                  const precioPorProducto = (item.price * item.quantity)
-                  console.log (precioPorProducto)
-                return(
-                <CartWithItems id={item.id} product={item.title} quantity={item.quantity} priceByProduct={precioPorProducto} price={item.price}/>
-                )})}
-        <br/>
-        <p>Precio total:{sumaPrecios} </p>
-        <button onClick={showcart} className="btn btn-success">Comprar</button>
-        <br/><br/>
-        <button  onClick={clear} className="btn btn-danger">Eliminar todos los productos</button>
-      </ul>
+          <div className="cartDetail">
+            <div className='itemSelectedContainer'>
+              <ul>
+                {!cart.length ? <CartWithoutItems/> : 
+                      cart.map(item =>{ 
+                        const precioPorProducto = (item.price * item.quantity)
+                        console.log (precioPorProducto)
+                      return(
+                      <CartWithItems key={item.id}  id={item.id} product={item.title} quantity={item.quantity} priceByProduct={precioPorProducto} price={item.price}/>
+                      )})}
+              </ul>
+          </div>
+          <div className="priceControlersContainer">
+            <p>${sumaPrecios} </p>
+            <button onClick={showcart} className="buy btn btn-success">Comprar</button>
+            <br/><br/>
+            <button  onClick={clear} className="btn btn-danger">Eliminar todos los productos</button>
+          </div>
+        </div>
       </div>
     )
 }

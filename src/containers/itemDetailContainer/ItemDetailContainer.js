@@ -12,9 +12,7 @@ export default function ItemDetailContainer() {
     
     const [post, setPosts] = useState([]);
 
-    
-
-  
+      
 
     useEffect(() => {
 

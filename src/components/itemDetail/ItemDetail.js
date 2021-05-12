@@ -1,14 +1,24 @@
 import React from 'react'
 import ItemCounter from '../itemCounter/ItemCounter'
 import './ItemDetail.css'
+// import { useHistory } from 'react-router-dom'
+
 
 export default function ItemDetail({postInput}) {
+
+    // let history = useHistory()
+
+    // function handleClick(){
+    //     history.push(`/itemlist/${category}`)
+    //     console.log('hola')
+    // }
 
     const category = postInput.category
     const stock = postInput.stock
     const id = postInput.id
     const title = postInput.title
     const price = postInput.price
+
     
 
     return (
@@ -17,7 +27,7 @@ export default function ItemDetail({postInput}) {
                 <div className ="itemDetailImageContainer">
                     <img className="itemDetailImage" src={postInput.img} alt={`producto ${postInput.title}`} ></img>
                 </div>
-                <div className="texCounterContainer">
+                <div className="texCounterContainer" >
                     <div className ="textDetailContainer">
                         <h2 className="itemDetailTitle"> {postInput.title} </h2>
                         <h4 className="itemDetailDescription"> {postInput.body}</h4>
