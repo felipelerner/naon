@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router';
 import ItemDetail from '../../components/itemDetail/ItemDetail';
-
+import db from '../../data/firebaseConfig'
 
 
 export default function ItemDetailContainer() {
@@ -10,25 +10,31 @@ export default function ItemDetailContainer() {
     const {id} = useParams()
     console.log(id)
     
+    
     const [post, setPosts] = useState([]);
 
-      
 
-    useEffect(() => {
 
-      const isItemId = (post) => {
+      useEffect(() => {
 
         const parsedId = parseInt(id)
         
-        return post.id === parsedId;
+        const itemCollection = db.collection("data")
+        .where("id", "==", parsedId);
 
-      };
+        function getItems(){
+          return itemCollection.get()
+            .then(snapshot => {
+            return snapshot.docs.map(doc => doc.data())
+        })
+        }
 
-        fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
-        .then((response) => response.json())
-        .then((data) => setPosts(data.find(isItemId)));
+        getItems()
+          .then(data => {
+            console.log(data[0])
+            setPosts(data[0])})
+      },[id])
 
-      }, [id])
 
     return (
         <div>

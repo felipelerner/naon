@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import './ItemListContainer.css';
 import ItemList from '../../components/itemList/ItemList'; 
 import { useParams } from 'react-router';
+import db from '../../data/firebaseConfig'
+
+
 
 export default function ItemListContainer(props){
 
@@ -9,22 +12,24 @@ export default function ItemListContainer(props){
   console.log(category)
 
   const [posts, setPosts] = useState([]);
-  
 
 
     useEffect(() => {
 
-      const filterCategory = (posts) => {
-        return posts.category === category;
-      };
+      const itemCollection = db.collection("data")
+      .where("category", "==", category);
 
-      fetch('https://raw.githubusercontent.com/felipelerner/sisclo/master/src/data/prueba.json')
-      .then((response) => response.json())
-      .then((data) => setPosts(data.filter(filterCategory)));
-      
-  
-    }, [category])
-  
+        function getItems(){
+          return itemCollection.get()
+            .then(snapshot => {
+            return snapshot.docs.map(doc => doc.data())
+        })
+        }
+
+      getItems()
+        .then(data => setPosts(data))
+    },[category])
+ 
 
 
     return (
