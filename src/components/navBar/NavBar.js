@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import logo from '../../img/logo_sisclo-02-02.png';
+import logo from '../../img/naon-03.png';
 import CartWidget from '../cartWidget/CartWidget';
 import { Link } from 'react-router-dom'
 
@@ -13,7 +13,7 @@ export default function NavBar(){
         <div className="Nav">
           <header className="Nav-header">
             <Link to={`/`}style={{ color: 'inherit', textDecoration: 'inherit'}}>
-            <img className="Logo" src={logo} alt="logo sisclo"/>
+            <img className="Logo" src={logo} alt="logo naon"/>
             </Link>
               <ul>
                 <Link to ={`/itemlist/roll`}style={{ color: 'inherit', textDecoration: 'inherit'}}>
