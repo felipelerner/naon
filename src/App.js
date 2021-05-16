@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/home/Home';
 import { CartProvider } from './context/CartContext';
 import CartPage from './components/cart/Cart';
+import BuyForm from './components/buyForm/BuyForm'
 
 
 export default function App(){
@@ -31,8 +32,11 @@ export default function App(){
             <ItemListContainer greeting="Sitio en construccion" />
             </div>
           </Route>
-          <Route path="/cart">
+          <Route exact path="/cart">
             <CartPage />
+          </Route>
+          <Route path="/cart/buy">
+            <BuyForm/>
           </Route>
       </Switch>
     </Router>

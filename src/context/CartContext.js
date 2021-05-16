@@ -52,8 +52,13 @@ export function CartProvider(props){
 
     const sumaCantidad = cantidad.reduce((prev, next)=> prev + next, 0);
 
+        const precio = cart.map(item =>
+     (item.price * item.quantity))   
+    
+    const sumaPrecios = precio.reduce((prev, next) => prev + next, 0);
 
-    return <CartContext.Provider value={{sumaCantidad, setCartItem, setCart, clear, removeItem, cart}}{...props} /> 
+
+    return <CartContext.Provider value={{sumaPrecios, sumaCantidad, setCartItem, setCart, clear, removeItem, cart}}{...props} /> 
     
 }
 
