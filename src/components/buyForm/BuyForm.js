@@ -29,7 +29,7 @@ export default function BuyForm() {
 
         SendOrderService(cart, formData, sumaPrecios)
             .then(res => setDocRef(res),
-  
+            
             
         );
         console.log(docRef)
