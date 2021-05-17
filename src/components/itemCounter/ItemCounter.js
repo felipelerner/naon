@@ -24,7 +24,7 @@ export default function ItemCounter ({title, nombre, stock, initial, id, price})
   }
 
   function onAdd(){
-    setCartItem({id: id, quantity: number, title: title, price: price, stock:stock})
+    setCartItem({id: id, quantity: number, totalPrice:(number * price), title: title, price: price, stock:stock})
     setShowFinishButton(true)
   }
 

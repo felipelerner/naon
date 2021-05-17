@@ -1,0 +1,29 @@
+.buyFormContainer{
+    z-index: 999;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buyDetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 4.5%;
+    min-height: 70%;
+    height: auto;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.buyDetail h2{
+    padding-top: 15px;
+}
+
+.buybtn{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}

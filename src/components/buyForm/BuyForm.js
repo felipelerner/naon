@@ -1,14 +1,15 @@
 import React, {useContext, useState} from 'react'
 import { CartContext } from '../../context/CartContext';
 import "firebase/firestore";
-import SendOrderService from '../../services/orderServices'
-
+import SendOrderService from '../../services/orderServices';
+import './BuyForm.css'
 
 
 export default function BuyForm() {
 
+
+
     const {cart, sumaPrecios} = useContext(CartContext)
-    // const hardcodedBuyerData = {name: "Pepe", email: "pepe@pepe.com", phone: "55555555"};
     const [ docRef, setDocRef ] = useState('')
     const [formData, setFormData] = useState({  name:'',
                                                 email:'',
@@ -28,15 +29,17 @@ export default function BuyForm() {
 
         SendOrderService(cart, formData, sumaPrecios)
             .then(res => setDocRef(res),
-            console.log(docRef)
+  
+            
         );
-     }
+        console.log(docRef)
+    }
 
-
+    
     return (
-        <div className="home">
-          <div className="cartDetail">
-              <div>
+        <div className="buyFormContainer">
+          <div className="buyDetail">
+              
                   <h2>estás comprando</h2>
                     {
                         cart.map(item =>{
@@ -47,7 +50,7 @@ export default function BuyForm() {
                         })
                     }
                 <p>total: {sumaPrecios}</p>
-              </div>
+              
                 <form>
                     <label>
                         <input type="text" className="form-control" onChange={handleInputChange} name="name"  placeholder="Nombre y Apellido" /> 
@@ -57,9 +60,9 @@ export default function BuyForm() {
                         <input type="text" className="form-control" onChange={handleInputChange} name="phone"  placeholder="Telefono" /> 
                         <br/>
                     </label>
-                    <input type="submit" value="Finalizar compra" />
+                    {/* <input type="submit" value="Finalizar compra" /> */}
                 </form>
-                <button onClick={() => sendOrder()}>ver</button>
+                <button className='buybtn btn btn-success' onClick={() => sendOrder()}>Finalizar Compra</button>
           </div>
         </div>
     )}

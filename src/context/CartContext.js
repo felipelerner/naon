@@ -14,7 +14,7 @@ export function CartProvider(props){
       }
 
     
-      function setCartItem({id, title, quantity, price, totalPrice, totalProducts, stock}) {
+      function setCartItem({id, title, quantity, totalPrice, price, stock}) {
         const isInCart = isCurrentlyInCart(id)
         if (isInCart) {
           const newToCart = cart.map(item => {
@@ -24,15 +24,14 @@ export function CartProvider(props){
                 stock: stock,
                 quantity: quantity + item.quantity,
                 price: price,
-                totalPrice: (item.price * item.quantity),
-                totalProducts: (item.quantity + item.quantity) 
+                totalPrice: totalPrice,
               }
             }
             return item
           })
           return setCart([...newToCart])
         }
-        setCart([...cart, {id, title, quantity, price, totalPrice, totalProducts, stock}])
+        setCart([...cart, {id, title, quantity, price, totalPrice, stock}])
     }
 
     function clear(){
