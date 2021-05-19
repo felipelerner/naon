@@ -3,7 +3,11 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Este es un e-commerce de fantasía de sisclo sushi, desarrollado como parte de la práctica del curso de React.js en Coderhouse. El mismo está pensado para poner a prueba los conocimientos que voy adquieriendo a lo largo del curso.
+> Este es un e-commerce de fantasía de naon sushi, desarrollado como parte de la práctica del curso de React.js en Coderhouse. El mismo está pensado para poner a prueba los conocimientos que voy adquieriendo a lo largo del curso.
+
+
+## [Ver Demo](https://i.imgur.com/9MTA5CB.gif)
+
 
 ## Install
 

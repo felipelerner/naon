@@ -20,10 +20,6 @@ export default function CartPage() {
       history.push('/cart/buy')
     }
 
-    // const precio = cart.map(item =>
-    //  (item.price * item.quantity))   
-    
-    // const sumaPrecios = precio.reduce((prev, next) => prev + next, 0);
   
     function CartWithItems({id, product, quantity, priceByProduct, price}){
       return (
@@ -64,7 +60,8 @@ export default function CartPage() {
           </div>
           <div className="priceControlersContainer">
             <p>${sumaPrecios} </p>
-            <button  onClick={() => handleToBuy()} className="buy btn btn-success">Comprar</button>
+            {!cart.length ? <button  onClick={() => handleToHome()} className="buy btn btn-success" disabled>Comprar</button> : 
+            <button  onClick={() => handleToBuy()} className="buy btn btn-success">Comprar</button>}
             <br/><br/>
             <button  onClick={clear} className="btn btn-danger">Eliminar todos los productos</button>
           </div>

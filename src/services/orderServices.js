@@ -15,6 +15,7 @@ export default function SendOrderService (cart, buyer, totalPrice) {
         }).then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
             return docRef.id
+            
 
         })
         .catch(function(error) {

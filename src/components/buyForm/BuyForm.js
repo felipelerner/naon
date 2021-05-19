@@ -25,9 +25,10 @@ export default function BuyForm() {
     function sendOrder() {
         console.log(formData)
         SendOrderService(cart, formData, sumaPrecios)
-            .then(res => setDocRef(res),
+            .then(res =>{ 
+            setDocRef(res)
             clear()
-        );
+        });
     }
 
     function backToHome(){
@@ -59,18 +60,16 @@ export default function BuyForm() {
                         <input type="text" className="form-control" onChange={handleInputChange} name="phone"  placeholder="Telefono" /> 
                         <br/>
                     </label>
-                    {/* <input type="submit" value="Finalizar compra" /> */}
                 </form>
                     <button
                     disabled={!formData.name || !formData.email || !formData.phone}
                     className='buybtn btn btn-success' onClick={() => sendOrder()}>Finalizar Compra</button> </div> : 
-                <div className= "succes">
+                <div className= "succesDiv">
                     <h2> Compra completada! </h2>
                     <p> Tu compra se generó con el id {docRef} </p>
                     <button className="backHomeBtn btn btn-success" onClick={() => backToHome()}>Volver al home</button>
                 </div>
                 }
-
           </div>
         </div>
     )}
