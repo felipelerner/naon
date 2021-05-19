@@ -7,9 +7,8 @@
 
 ## Demo
 
-```sh
 ![](http://i.imgur.com/60bts.gif)
-```
+
 
 ## Install
 
