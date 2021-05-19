@@ -28,7 +28,6 @@ export default function App(){
           </Route>
           <Route path="/itemlist/:category">
             <div className = "bodyApp">   
-            {/*<ItemCounterContainer nombre ="remera" stock = {5} initial ={1}/>*/}
             <ItemListContainer greeting="Sitio en construccion" />
             </div>
           </Route>

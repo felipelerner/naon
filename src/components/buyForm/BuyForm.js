@@ -64,7 +64,7 @@ export default function BuyForm() {
                     <button
                     disabled={!formData.name || !formData.email || !formData.phone}
                     className='buybtn btn btn-success' onClick={() => sendOrder()}>Finalizar Compra</button> </div> : 
-                <div className= "succesDiv">
+                <div className= "succes">
                     <h2> Compra completada! </h2>
                     <p> Tu compra se generó con el id {docRef} </p>
                     <button className="backHomeBtn btn btn-success" onClick={() => backToHome()}>Volver al home</button>

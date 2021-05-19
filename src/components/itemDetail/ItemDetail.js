@@ -1,17 +1,12 @@
 import React from 'react'
 import ItemCounter from '../itemCounter/ItemCounter'
 import './ItemDetail.css'
-// import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 export default function ItemDetail({postInput}) {
 
-    // let history = useHistory()
-
-    // function handleClick(){
-    //     history.push(`/itemlist/${category}`)
-    //     console.log('hola')
-    // }
+    let history = useHistory()
 
     const category = postInput.category
     const stock = postInput.stock
@@ -19,7 +14,10 @@ export default function ItemDetail({postInput}) {
     const title = postInput.title
     const price = postInput.price
 
-    
+    function backToBuy(){
+        history.push(`/itemlist/${category}`)
+    }
+
 
     return (
         <div className="itemDetailContainer">
@@ -41,6 +39,7 @@ export default function ItemDetail({postInput}) {
                     </div>
                     <div className="itemDetailCounterContainer">
                         <ItemCounter title={title} id={id} nombre={category} stock={stock} initial={1} price={price} />
+                        <button className='backbtn btn btn-success' onClick={() => backToBuy()} >Seguir comprando</button>
                     </div>
                 </div>
             </div>

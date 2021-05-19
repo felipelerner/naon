@@ -86,11 +86,15 @@
 }
 
 .itemDetailCounterContainer{
+    margin-top: -15%;
     width: 100%;
     height: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
+.backbtn{
+    position: absolute;
+    transform: translateY(320%);
+}
