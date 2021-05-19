@@ -7,7 +7,7 @@
 
 ## Demo
 
-![](https://i.imgur.com/9MTA5CB.gif)
+[Imgur](https://i.imgur.com/9MTA5CBm.gif)
 
 
 ## Install
