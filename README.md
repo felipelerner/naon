@@ -6,8 +6,8 @@
 > Este es un e-commerce de fantasía de naon sushi, desarrollado como parte de la práctica del curso de React.js en Coderhouse. El mismo está pensado para poner a prueba los conocimientos que voy adquieriendo a lo largo del curso.
 
 
-## Ver Demo
-![Demo](https://i.imgur.com/9MTA5CB.gif)
+## [Ver Demo](https://i.imgur.com/9MTA5CB.gif)
+
 
 ## Install
 
