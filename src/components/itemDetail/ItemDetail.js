@@ -24,6 +24,7 @@ export default function ItemDetail({postInput}) {
             <div className="itemDetail">
                 <div className ="itemDetailImageContainer">
                     <img className="itemDetailImage" src={postInput.img} alt={`producto ${postInput.title}`} ></img>
+                    <button className='backbtn btn btn-success' onClick={() => backToBuy()} >Seguir comprando</button>
                 </div>
                 <div className="texCounterContainer" >
                     <div className ="textDetailContainer">
@@ -39,7 +40,6 @@ export default function ItemDetail({postInput}) {
                     </div>
                     <div className="itemDetailCounterContainer">
                         <ItemCounter title={title} id={id} nombre={category} stock={stock} initial={1} price={price} />
-                        <button className='backbtn btn btn-success' onClick={() => backToBuy()} >Seguir comprando</button>
                     </div>
                 </div>
             </div>
