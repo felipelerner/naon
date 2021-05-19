@@ -27,3 +27,18 @@
     margin-top: 15px;
     margin-bottom: 10px;
 }
+
+.succesDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.succesDiv h2{
+    padding-bottom: 20%;
+}
+
+.succesDiv p{
+    padding-bottom: 20%;
+}

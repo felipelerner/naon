@@ -1,21 +1,19 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState} from 'react';
 import { CartContext } from '../../context/CartContext';
 import "firebase/firestore";
 import SendOrderService from '../../services/orderServices';
 import './BuyForm.css'
+import { useHistory } from 'react-router';
 
 
 export default function BuyForm() {
 
-
-
-    const {cart, sumaPrecios} = useContext(CartContext)
+    let history = useHistory()
+    const {cart, sumaPrecios, clear} = useContext(CartContext)
     const [ docRef, setDocRef ] = useState('')
     const [formData, setFormData] = useState({  name:'',
                                                 email:'',
                                                 phone:'' })
-
-
 
     const handleInputChange = (event) => {
             setFormData({
@@ -26,13 +24,14 @@ export default function BuyForm() {
 
     function sendOrder() {
         console.log(formData)
-
         SendOrderService(cart, formData, sumaPrecios)
             .then(res => setDocRef(res),
-            
-            
+            clear()
         );
-        console.log(docRef)
+    }
+
+    function backToHome(){
+        history.push("/")
     }
 
     
@@ -40,7 +39,7 @@ export default function BuyForm() {
         <div className="buyFormContainer">
           <div className="buyDetail">
               
-                  <h2>estás comprando</h2>
+          { !docRef ? <div> <h2>estás comprando</h2> 
                     {
                         cart.map(item =>{
 
@@ -62,7 +61,16 @@ export default function BuyForm() {
                     </label>
                     {/* <input type="submit" value="Finalizar compra" /> */}
                 </form>
-                <button className='buybtn btn btn-success' onClick={() => sendOrder()}>Finalizar Compra</button>
+                    <button
+                    disabled={!formData.name || !formData.email || !formData.phone}
+                    className='buybtn btn btn-success' onClick={() => sendOrder()}>Finalizar Compra</button> </div> : 
+                <div className= "succesDiv">
+                    <h2> Compra completada! </h2>
+                    <p> Tu compra se generó con el id {docRef} </p>
+                    <button className="backHomeBtn btn btn-success" onClick={() => backToHome()}>Volver al home</button>
+                </div>
+                }
+
           </div>
         </div>
     )}
