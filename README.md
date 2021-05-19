@@ -8,7 +8,7 @@
 ## Demo
 
 ```sh
-![Alt Text](https://i.imgur.com/9MTA5CB.gif)
+<iframe class="imgur-embed" width="100%" height="494" frameborder="0" src="https://i.imgur.com/9MTA5CB.gifv#embed"></iframe>
 ```
 
 ## Install
