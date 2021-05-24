@@ -18,7 +18,6 @@ export default function ItemDetail({postInput}) {
         history.push(`/itemlist/${category}`)
     }
 
-
     return (
         <div className="itemDetailContainer">
             <div className="itemDetail">
