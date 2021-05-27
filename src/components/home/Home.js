@@ -33,9 +33,6 @@ export default function Home() {
                 <p onClick={toTablas}>Tablas</p>
                 <p onClick={toCredits}>Créditos</p> 
             </div>
-            {/* <div className='cartHome'> 
-                <CartWidget/>
-                </div> */}
             <img className='naonWhite' src={whiteLogo}/>
             </div>
         )

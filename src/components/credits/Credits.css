@@ -13,10 +13,14 @@
     flex-direction: column;
     background-color: white;
     margin-top: 4.5%;
-    min-height: 70%;
+    min-height: 40%;
     height: auto;
     width: 50%;
     border-radius: 20px;
+}
+
+.creditContainer h3{
+    padding-top: 5%;
 }
 
 .creditContainer ul{
@@ -24,10 +28,23 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
+    padding-left: 0;
 }
 
 .creditContainer ul li{
     display: flex;
     justify-content: center;
     padding: 10%;
+    color: black;
+    font-size: 2rem;
+    margin-top: 30%;
+}
+
+.creditContainer ul li:hover{
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+    color: rgb(112, 16, 83);
+    font-size: 2rem;
+    margin-top: 30%;
 }
