@@ -8,6 +8,7 @@ import Home from './components/home/Home';
 import { CartProvider } from './context/CartContext';
 import CartPage from './components/cart/Cart';
 import BuyForm from './components/buyForm/BuyForm'
+import Credits from './components/credits/Credits';
 
 
 export default function App(){
@@ -16,13 +17,13 @@ export default function App(){
     <CartProvider>
     <div className="home_bg">
     <Router>
-    <NavBar />   
-      <Switch>
       <Route exact path="/" >
         <div className="home">
           <Home/>
         </div> 
       </Route>
+      <NavBar />   
+        <Switch>
           <Route path="/itemdetail/:id">
           <ItemDetailContainer/>
           </Route>
@@ -37,7 +38,10 @@ export default function App(){
           <Route path="/cart/buy">
             <BuyForm/>
           </Route>
-      </Switch>
+          <Route path="/credits">
+            <Credits/>
+          </Route>
+        </Switch>
     </Router>
     </div>
     </CartProvider>

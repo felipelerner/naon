@@ -35,21 +35,21 @@ export default function BuyForm() {
         history.push("/")
     }
 
-    
+     
     return (
         <div className="buyFormContainer">
           <div className="buyDetail">
               
-          { !docRef ? <div> <h2>estás comprando</h2> 
+          { !docRef ? <div className="detailContainer"> <h2>Estás comprando</h2> 
                     {
                         cart.map(item =>{
 
                             return(
-                            <p key={item.id}>{item.quantity} - {item.title} </p>
+                            <span key={item.id}>{item.quantity} - {item.title} </span>
                             )
                         })
                     }
-                <p>total: {sumaPrecios}</p>
+                <p>Total: ${sumaPrecios}</p>
               
                 <form>
                     <label>

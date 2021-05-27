@@ -1,0 +1,33 @@
+.credit{
+    z-index: 999;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.creditContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 4.5%;
+    min-height: 70%;
+    height: auto;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.creditContainer ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.creditContainer ul li{
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+}

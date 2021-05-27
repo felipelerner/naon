@@ -22,7 +22,9 @@ export default function NavBar(){
                 <Link to ={`/itemlist/tabla`}style={{ color: 'inherit', textDecoration: 'inherit'}}>
                   <li>Tablas</li>
                 </Link>  
-                  <li>Contacto</li>
+                <Link to ={`/credits`}style={{ color: 'inherit', textDecoration: 'inherit'}}>
+                  <li>Créditos</li>
+                </Link>
               </ul>
             <CartWidget/>  
           </header>
