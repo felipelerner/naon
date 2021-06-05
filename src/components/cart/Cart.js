@@ -5,7 +5,6 @@ import './Cart.css'
 
 
 
-
 export default function CartPage() {
 
     const {cart, clear, removeItem, sumaPrecios} = useContext(CartContext);
@@ -37,8 +36,8 @@ export default function CartPage() {
     
     function CartWithoutItems(){
       return (
-        <div>
-        <p>No elegiste ningun item</p><button onClick={() => handleToHome()} className="btn btn-light">Volver al home</button>
+        <div className="emptyCart">
+        <p>No elegiste ningún producto.</p> <br/> <button onClick={() => handleToHome()} className="btn btn-success">Volver al home</button>
         </div>
       )
     }
@@ -52,7 +51,6 @@ export default function CartPage() {
                 {!cart.length ? <CartWithoutItems/> : 
                       cart.map(item =>{ 
                         const precioPorProducto = (item.price * item.quantity)
-                        console.log (precioPorProducto)
                       return(
                       <CartWithItems key={item.id}  id={item.id} product={item.title} quantity={item.quantity} priceByProduct={precioPorProducto} price={item.price}/>
                       )})}
@@ -60,10 +58,11 @@ export default function CartPage() {
           </div>
           <div className="priceControlersContainer">
             <p>${sumaPrecios} </p>
-            {!cart.length ? <button  onClick={() => handleToHome()} className="buy btn btn-success" disabled>Comprar</button> : 
+            {!cart.length ? <button className="buy btn btn-success" disabled>Comprar</button> : 
             <button  onClick={() => handleToBuy()} className="buy btn btn-success">Comprar</button>}
             <br/><br/>
-            <button  onClick={clear} className="btn btn-danger">Eliminar todos los productos</button>
+            {!cart.length ?  <button className="btn btn-danger" disabled>Eliminar todos los productos</button> : 
+            <button onClick={clear} className="btn btn-danger">Eliminar todos los productos</button>}
           </div>
         </div>
       </div>

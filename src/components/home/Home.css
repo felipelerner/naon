@@ -10,13 +10,13 @@
 .homePageBg{
     display: flex;
     position: absolute;
-    background: url("../../img/bg_sushi.jpg") no-repeat fixed center;
+    background: url("../../img/sushibg.jpg") no-repeat fixed center;
     -webkit-background-size: cover;
     background-size: cover;
     mix-blend-mode: darken;
     height: 100%;
     width: 100% ;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .naonWhite{

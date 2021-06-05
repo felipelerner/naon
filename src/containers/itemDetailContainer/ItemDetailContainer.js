@@ -8,7 +8,6 @@ export default function ItemDetailContainer() {
 
    
     const {id} = useParams()
-    console.log(id)
     
     
     const [post, setPosts] = useState([]);
@@ -16,9 +15,7 @@ export default function ItemDetailContainer() {
 
 
       useEffect(() => {
-
         const parsedId = parseInt(id)
-        
         const itemCollection = db.collection("data")
         .where("id", "==", parsedId);
 

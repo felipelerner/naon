@@ -11,7 +11,7 @@ export default function CartWidget(){
 
     let history = useHistory()
 
-    function handleClick() {
+    function handleToCart() {
       history.push("/cart");
     }
 
@@ -20,8 +20,8 @@ export default function CartWidget(){
     <div>
         {sumaCantidad > 0 ? <div>
             <div className="popCart"> {sumaCantidad} </div>
-            <ShoppingCartOutlinedIcon   onClick={handleClick}  fontSize="large" className="cartWithPop" />
-        </div> : <ShoppingCartOutlinedIcon  onClick={handleClick}  fontSize="large" className="cart" />} 
+            <ShoppingCartOutlinedIcon   onClick={handleToCart}  fontSize="large" className="cartWithPop" />
+        </div> : <ShoppingCartOutlinedIcon  onClick={handleToCart}  fontSize="large" className="cart" />} 
     </div>
     )
     

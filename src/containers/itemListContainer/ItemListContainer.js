@@ -6,13 +6,11 @@ import db from '../../data/firebaseConfig'
 
 
 
-export default function ItemListContainer(props){
+export default function ItemListContainer(){
 
   const {category} = useParams()
-  console.log(category)
 
   const [posts, setPosts] = useState([]);
-
 
     useEffect(() => {
 
@@ -35,7 +33,6 @@ export default function ItemListContainer(props){
     return (
         <div className="itemlistcontainer">
         <ItemList postsInput={posts} />
-        {/*<MessageCard title = {props.greeting} />*/}
         </div>
       );
 }

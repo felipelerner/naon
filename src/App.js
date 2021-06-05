@@ -29,7 +29,7 @@ export default function App(){
           </Route>
           <Route path="/itemlist/:category">
             <div className = "bodyApp">   
-            <ItemListContainer greeting="Sitio en construccion" />
+            <ItemListContainer/>
             </div>
           </Route>
           <Route exact path="/cart">

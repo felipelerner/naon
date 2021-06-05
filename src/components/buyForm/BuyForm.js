@@ -23,7 +23,6 @@ export default function BuyForm() {
 
 
     function sendOrder() {
-        console.log(formData)
         SendOrderService(cart, formData, sumaPrecios)
             .then(res =>{ 
             setDocRef(res)
@@ -65,8 +64,8 @@ export default function BuyForm() {
                     disabled={!formData.name || !formData.email || !formData.phone}
                     className='buybtn btn btn-success' onClick={() => sendOrder()}>Finalizar Compra</button> </div> : 
                 <div className= "succesDiv">
-                    <h2> Compra completada! </h2>
-                    <p> Tu compra se generó con el id {docRef} </p>
+                    <h2> ¡Compra completada! </h2>
+                    <p> Tu compra se generó con el id <strong>{docRef}</strong> </p>
                     <button className="backHomeBtn btn btn-success" onClick={() => backToHome()}>Volver al home</button>
                 </div>
                 }

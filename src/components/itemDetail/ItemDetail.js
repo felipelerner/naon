@@ -22,8 +22,8 @@ export default function ItemDetail({postInput}) {
         <div className="itemDetailContainer">
             <div className="itemDetail">
                 <div className ="itemDetailImageContainer">
-                    <img className="itemDetailImage" src={postInput.img} alt={`producto ${postInput.title}`} ></img>
-                    <button className='backbtn btn btn-success' onClick={() => backToBuy()} >Seguir comprando</button>
+                    <img className="itemDetailImage" src={postInput.img} alt={`producto ${postInput.title}`}></img>
+                    <button className='backbtn btn btn-success' onClick={() => backToBuy()}> Seguir comprando </button>
                 </div>
                 <div className="texCounterContainer" >
                     <div className ="textDetailContainer">

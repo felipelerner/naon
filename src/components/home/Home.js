@@ -1,7 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router'
 import whiteLogo from '../../img/logoWhite-04.png'
-import CartWidget from '../cartWidget/CartWidget'
 import './Home.css'
 
 
@@ -33,7 +32,7 @@ export default function Home() {
                 <p onClick={toTablas}>Tablas</p>
                 <p onClick={toCredits}>Créditos</p> 
             </div>
-            <img className='naonWhite' src={whiteLogo}/>
+            <img className='naonWhite' alt="White Naon Logo" src={whiteLogo}/>
             </div>
         )
 }
