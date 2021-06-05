@@ -7,12 +7,9 @@
 
 
 ## Demo
-
-```sh
 [Probar Demo](hhttps://sushi-naon.herokuapp.com/)
-
 [Ver Gif](https://s6.gifyu.com/images/Animationd6b06992edf5e76f.gif)
-```
+
 
 
 ## Install
